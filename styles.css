@@ -1,0 +1,87 @@
+/* Background and container styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://cdn.prod.website-files.com/620e4101b2ce12a1a6bff0e8/65e80f722774b7ae68fbecdb_samantha-gades-fIHozNWfcvs-unsplash%20(1)-p-1600.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Darkened overlay for better contrast */
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8); /* Increased transparency */
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  position: relative;
+  text-align: center; /* Center all elements inside */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+label {
+  margin-top: 10px;
+  font-size: 1.1em;
+  display: block;
+  color: #333;
+  text-align: left; /* Align label text to the left */
+}
+
+input {
+  width: 80%; /* Reduced width */
+  padding: 12px;
+  margin: 10px auto; /* Center the input box */
+  display: block; /* Ensure the inputs are centered */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+button {
+  width: 80%; /* Center the button as well */
+  padding: 15px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin: 20px auto; /* Center the button */
+  display: block;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  input, button {
+    width: 100%; /* Full width on small screens */
+  }
+}
