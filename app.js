@@ -1,37 +1,38 @@
+// Initialize EmailJS
+(function() {
+    emailjs.init("YOUR_EMAILJS_USER_ID");
+})();
+
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
-  event.preventDefault();  // Prevent default form submission
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
 
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
+    // Send to Google Forms
+    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdM5RwdZ-2RtVCV2QCgJvum2XyHokvq3OvYtgw0l7Bip8ft7g/formResponse";
+    const data = new FormData();
+    data.append('entry.1654506017', name); // Change to your form's entry ID for Name
+    data.append('entry.1425649245', email); // Change to your form's entry ID for Email
 
-  // Step 1: Submit data to Google Forms
-  const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSc0zScyiFo90UQtuG-5YEniPfzlEVghB1VZbhNzPdegikgpdw/formResponse";  // Replace YOUR_FORM_ID
-  let formData = new FormData();
-  formData.append("entry.2092238618", name); // Replace with your Google Form field ID for 'name'
-  formData.append("entry.1556369182", email); // Replace with your Google Form field ID for 'email'
-
-  fetch(googleFormURL, {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
-  }).then(() => {
-    console.log("Form submitted to Google Forms!");
-
-    // Step 2: Send confirmation email using EmailJS
-    emailjs.init("Ch_buYIHpB0sg-yKm");  // Replace with your EmailJS user ID
-
-    const templateParams = {
-      to_name: name,
-      to_email: email,
-    };
-
-    emailjs.send("service_m4w667c", "template_kszgnsk", templateParams)
-      .then((response) => {
-        alert("Registration Successful! Email sent.");
-        console.log("SUCCESS!", response.status, response.text);
-      }, (error) => {
-        alert("Failed to send email. Please try again.");
-        console.log("FAILED...", error);
-      });
-  });
+    fetch(formURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data
+    })
+    .then(() => {
+        // Send verification email
+        return emailjs.send("service_z3gxw2l", "template_5hd06zk", {
+            name: name,
+            email: email
+        });
+    })
+    .then(() => {
+        alert("Registration successful! A verification email has been sent.");
+        document.getElementById('registrationForm').reset(); // Reset form
+    })
+    .catch(error => {
+        console.error('Error!', error);
+        alert("There was an error in the registration process.");
+    });
 });
