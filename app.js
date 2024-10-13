@@ -1,6 +1,6 @@
 // Initialize EmailJS
 (function() {
-    emailjs.init("YOUR_EMAILJS_USER_ID");
+    emailjs.init("Ch_buYIHpB0sg-yKm");
 })();
 
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
