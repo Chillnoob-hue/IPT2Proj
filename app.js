@@ -18,7 +18,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     console.log("Form submitted to Google Forms!");
 
     // Step 2: Send confirmation email using EmailJS
-    emailjs.init("0H1AxXGod1NCJI7NxaUct");  // Replace with your EmailJS user ID
+    emailjs.init("Ch_buYIHpB0sg-yKm");  // Replace with your EmailJS user ID
 
     const templateParams = {
       to_name: name,
