@@ -5,7 +5,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   const email = document.getElementById('email').value;
 
   // Step 1: Submit data to Google Forms
-  const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSc0zScyiFo90UQtuG-5YEniPfzlEVghB1VZbhNzPdegikgpdw/viewform?usp=pp_url";  // Replace YOUR_FORM_ID
+  const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSc0zScyiFo90UQtuG-5YEniPfzlEVghB1VZbhNzPdegikgpdw/formResponse";  // Replace YOUR_FORM_ID
   let formData = new FormData();
   formData.append("entry.2092238618", name); // Replace with your Google Form field ID for 'name'
   formData.append("entry.1556369182", email); // Replace with your Google Form field ID for 'email'
