@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Registration</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"> <!-- Character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
+  <title>Event Registration</title> <!-- Title of the webpage -->
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file for styling -->
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="main-content">
+  <div class="overlay"></div> <!-- Overlay for background effects -->
+
+  <div class="main-content"> <!-- Main container for event description and registration form -->
+    
     <!-- Event Description -->
-    <div class="event-description">
-      <h2>Upcoming Event: Tech Conference 2024</h2>
-      <p>Join us for a day of insightful talks, networking opportunities, and workshops led by industry leaders. Expand your knowledge and connect with like-minded professionals!</p>
-      <p><strong>Date:</strong> November 15, 2024</p>
-      <p><strong>Location:</strong> ICCT, Cainta</p>
-      <p id="countdown"></p> <!-- Countdown Timer -->
+    <div class="event-description"> <!-- Container for event details -->
+      <h2>Upcoming Event: Tech Conference 2024</h2> <!-- Event title -->
+      <p>Join us for a day of insightful talks, networking opportunities, and workshops led by industry leaders. Expand your knowledge and connect with like-minded professionals!</p> <!-- Event description -->
+      <p><strong>Date:</strong> November 15, 2024</p> <!-- Event date -->
+      <p><strong>Location:</strong> ICCT, Cainta</p> <!-- Event location -->
+      <p id="countdown"></p> <!-- Placeholder for countdown timer -->
     </div>
 
     <!-- Registration Form -->
-    <div class="registration-container">
-      <h1>Register for the Event</h1>
-      <form id="registrationForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-        <button type="submit">Register</button>
+    <div class="registration-container"> <!-- Container for the registration form -->
+      <h1>Register for the Event</h1> <!-- Registration form title -->
+      <form id="registrationForm"> <!-- Form for user registration -->
+        <label for="name">Name:</label> <!-- Label for the name input -->
+        <input type="text" id="name" name="name" required> <!-- Input field for the user's name -->
+        <br> <!-- Line break for spacing -->
+        <label for="email">Email:</label> <!-- Label for the email input -->
+        <input type="email" id="email" name="email" required> <!-- Input field for the user's email -->
+        <br> <!-- Line break for spacing -->
+        <button type="submit">Register</button> <!-- Submit button for the form -->
       </form>
     </div>
   </div>
 
+  <!-- Include EmailJS library for sending emails -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Link to external JavaScript file for handling form submission and countdown -->
   <script src="app.js"></script>
 </body>
 </html>
