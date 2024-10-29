@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://cdn.prod.website-files.com/620e4101b2ce12a1a6bff0e8/65e80f722774b7ae68fbecdb_samantha-gades-fIHozNWfcvs-unsplash%20(1)-p-1600.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.main-content {
+  display: flex;
+  width: 80%;
+  max-width: 1000px;
+  z-index: 2;
+}
+
+.event-description {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  margin: 10px;
+  color: #333; /* Moved color property here */
+  font-size: 1.2em; /* Moved font-size property here */
+}
+
+.registration-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  margin: 10px;
+  display: flex; /* Add display flex */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center align children */
+}
+
+#countdown {
+  font-size: 1em;
+  font-weight: bold;
+  color: #FF6347;
+}
+
+.registration-container label {
+  font-size: 1.2em; /* Increase label size */
+  color: black; /* Change label color to black */
+}
+
+.registration-container h1 {
+  font-size: 2em; /* Increase heading size */
+  color: #333;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.registration-container input {
+  width: 80%; /* Width of the input fields */
+  padding: 15px; /* Increase padding for larger inputs */
+  margin: 10px 0; /* Space between inputs */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.2em; /* Increase font size */
+}
+
+.registration-container button {
+  width: 80%; /* Width of the button */
+  padding: 15px; /* Increase padding for larger button */
+  background-color: black; /* Change button color to black */
+  border: none;
+  border-radius: 5px;
+  color: white; /* Text color for the button */
+  font-size: 1.2em; /* Increase font size */
+  cursor: pointer;
+  margin-top: 20px; /* Space above the button */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .registration-container {
+    /* Optional adjustments for smaller screens */
+    padding: 15px; /* Reduce padding if necessary */
+  }
+}
